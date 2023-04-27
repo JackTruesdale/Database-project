@@ -14,7 +14,11 @@ export class TeachService {
     async getAllEnglishTeachs(){
         const teachs = await this.teachModel.find().exec();
         // TODO: filter array for englush eteacher
-        return teachs.map(t => ({ id: t.id, 
+const eng= [];
+        //for()//iteralte though teaches to fins englsih
+
+
+        return eng.map(t => ({ id: t.id, 
             name: t.name,
             subject: t.subject,
             spec: t.spec,

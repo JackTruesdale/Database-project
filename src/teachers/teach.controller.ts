@@ -24,6 +24,12 @@ export class TeachController {
         return { id: generatedId };
     }
 
+    @Get('/english')
+    async getAllENGLISHTeachs() {
+        const teachs = await this.teachsService.getAllEnglishTeachs();
+        return teachs;
+    }
+
     @Get(':id')
     async getTeachById(@Param('id') teachId: string,) {
         const teach  = await this.teachsService.getTeachById(teachId);
@@ -51,9 +57,5 @@ export class TeachController {
     }
 
 
-    @Get('ENGLISH')
-    async getAllENGLISHTeachs() {
-        const teachs = await this.teachsService.getAllEnglishTeachs();
-        return teachs;
-    }
+    
 }
