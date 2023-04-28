@@ -14,11 +14,34 @@ export class TeachService {
     async getAllEnglishTeachs(){
         const teachs = await this.teachModel.find().exec();
         // TODO: filter array for englush eteacher
-const eng= [];
-        //for()//iteralte though teaches to fins englsih
+        const eng= teachs.map(t => ({ id: t.id, 
+            name: t.name,
+            subject: t.subject,
+            spec: t.spec,
+            clas: t.clas, 
+            picture: t.picture 
+        }));
+
+        const allEngTeach = [];
+        
+
+        for (let i = 0; i < 10; i++) {
+            console.log(`The value of i is: ${i}`);
+            if (eng[i].subject === "English") {
+                console.log(eng[i]); 
+                allEngTeach.push(eng[i]);
+                
+            }
+            
 
 
-        return eng.map(t => ({ id: t.id, 
+
+        
+        }
+        //for()//iteralte though teaches to find englsih
+
+
+        return allEngTeach.map(t => ({ id: t.id, 
             name: t.name,
             subject: t.subject,
             spec: t.spec,
